@@ -1,0 +1,132 @@
+.menu-bar {
+  margin-top: 9px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  min-height: 50px;
+  font-size: 18px;
+  line-height: 16px;
+  font-weight: 500;
+  padding: 20px;
+}
+@media (max-width: 991px) {
+  .menu-bar {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+}
+@media (max-width: 640px) {
+  .menu-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+.app-name-here {
+  position: relative;
+  margin-left: 20px;
+  height: auto;
+  max-width: 100%;
+  margin-top: 9px;
+  text-align: center;
+  font-family: "Aclonica", sans-serif;
+  color: rgba(255, 255, 255, 1);
+  line-height: 24px;
+  font-size: 40px;
+}
+@media (max-width: 991px) {
+  .app-name-here {
+    font-size: 27px;
+  }
+}
+@media (max-width: 640px) {
+  .app-name-here {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.row-updated {
+  margin-top: 0px;
+  margin-left: auto;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+@media (max-width: 991px) {
+  .row-updated {
+    margin-left: auto;
+  }
+}
+@media (max-width: 640px) {
+  .row-updated {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.home {
+  height: auto;
+  width: auto;
+  color: rgba(255, 255, 255, 1);
+  font-size: 25px;
+  margin-top: 15px;
+  margin-left: 0px;
+  position: relative;
+  font-family: "Advent Pro", sans-serif;
+}
+@media (max-width: 991px) {
+  .home {
+    font-size: 18px;
+  }
+}
+.map {
+  height: auto;
+  width: auto;
+  color: rgba(255, 255, 255, 1);
+  font-size: 25px;
+  margin-top: 15px;
+  margin-left: 32.1px;
+  position: relative;
+  font-family: "Advent Pro", sans-serif;
+}
+@media (max-width: 991px) {
+  .map {
+    font-size: 18px;
+  }
+}
+.news {
+  height: auto;
+  width: auto;
+  color: rgba(255, 255, 255, 1);
+  font-size: 25px;
+  margin-top: 15px;
+  margin-left: 31.9px;
+  position: relative;
+  font-family: "Advent Pro", sans-serif;
+}
+@media (max-width: 991px) {
+  .news {
+    font-size: 18px;
+  }
+}
+.suggestions {
+  height: auto;
+  width: auto;
+  color: rgba(255, 255, 255, 1);
+  font-size: 25px;
+  margin-top: 15px;
+  margin-left: 20px;
+  position: relative;
+  font-family: "Advent Pro", sans-serif;
+}
+@media (max-width: 991px) {
+  .suggestions {
+    font-size: 18px;
+  }
+}

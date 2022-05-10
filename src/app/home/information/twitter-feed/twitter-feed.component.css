@@ -1,0 +1,44 @@
+.column-2 {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: calc(50% - 10px);
+  margin-left: 20px;
+}
+@media (max-width: 999px) {
+  .column-2 {
+    width: 100%;
+  }
+}
+.twitter-feed-here {
+  width: 341px;
+  max-width: 100%;
+  position: relative;
+}
+@media (max-width: 991px) {
+  .twitter-feed-here {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
+  }
+}
+@media (max-width: 640px) {
+  .twitter-feed-here {
+    max-width: 90vw;
+  }
+}
+.image {
+  object-fit: contain;
+  object-position: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.image-sizer {
+  width: 100%;
+  padding-top: 176.26999999999998%;
+  pointer-events: none;
+  font-size: 0;
+}

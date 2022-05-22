@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LinksComponent } from './home/information/links/links.component';
 import { TwitterFeedComponent } from './home/information/twitter-feed/twitter-feed.component';
 import { LogoComponent } from './footer/logo/logo.component';
+import { SuggestionsComponent } from './suggestions/suggestions.component';
 
 @NgModule({
 	declarations: [
@@ -23,6 +24,7 @@ import { LogoComponent } from './footer/logo/logo.component';
   LinksComponent,
   TwitterFeedComponent,
   LogoComponent,
+  SuggestionsComponent,
 	],
 	imports: [BrowserModule, AppRoutingModule],
 	providers: [],

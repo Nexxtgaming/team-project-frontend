@@ -1,22 +1,18 @@
-.stack-updated-2 {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin-top: auto;
-  margin-bottom: auto;
-}
 .useful-links {
   height: auto;
   width: auto;
   color: rgba(70, 173, 133, 1);
   font-size: 30px;
-  margin-top: 0px;
-  margin-left: 0px;
+  margin-top: 0;
+  margin-left: 0;
   position: relative;
   text-align: center;
   font-family: "Aclonica", sans-serif;
 }
-.lorem-ipsum-dolor-si {
+
+.link-list {
+  display: flex;
+  flex-direction: column;
   height: auto;
   color: rgba(6, 71, 97, 1);
   font-size: 30px;
@@ -24,5 +20,9 @@
   position: relative;
   text-align: center;
   font-family: "Advent Pro", sans-serif;
-  line-height: 2px;
+}
+
+.text {
+  font-style: italic;
+  margin-bottom: 30px;
 }

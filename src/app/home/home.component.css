@@ -31,14 +31,14 @@ section {
 }
 
 .container {
-  margin-left: calc(50% - 50vw);
+  /*margin-left: calc(50% - 50vw);*/
   position: relative;
   height: 640px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
+  /*background-position: center;*/
+  /*background-size: cover;*/
+  /*background-repeat: no-repeat;*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
 }
 
 .content {

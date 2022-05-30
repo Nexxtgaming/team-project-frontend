@@ -1,24 +1,23 @@
-.section {
-  width: 100%;
-  flex-grow: 1;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: column;
+section {
+  width: 58vw;
   margin-left: auto;
   margin-right: auto;
 }
 
-.BuilderCarousel {
+.content {
+  height: 350px;
+  width: 40vw;
+  margin: 0 9vw;
   color: white;
 }
 
-.BuilderCarousel h1 {
+.content h1 {
   font-size: xxx-large;
+  margin: 10px 0 20px 0;
+  font-family: Aclonica, sans-serif;
+  text-align: center;
 }
-button {
-  alignment: left;
-  width: 5%;
-  color: lightseagreen;
-  background-color: black;
-  border-radius: 5px ;
+
+.content p {
+  text-align: justify;
 }

@@ -38,6 +38,12 @@ section {
   padding-bottom: 30px;
   margin-left: 10vw;
   margin-right: 10vw;
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+.content p {
+  font-size: x-large;
+  color: #488d58;
 }
 
 .explanation {
@@ -67,7 +73,7 @@ Form {
 
 Form input {
   margin-top: 10px;
-  width: 25%;
+  width: 40%;
 }
 
 Form textarea {

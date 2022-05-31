@@ -12,6 +12,7 @@ import { LinksComponent } from './home/information/links/links.component';
 import { TwitterFeedComponent } from './home/information/twitter-feed/twitter-feed.component';
 import { LogoComponent } from './footer/logo/logo.component';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
+import { MapOffersComponent } from './map-offers/map-offers.component';
 
 @NgModule({
 	declarations: [
@@ -25,6 +26,7 @@ import { SuggestionsComponent } from './suggestions/suggestions.component';
   TwitterFeedComponent,
   LogoComponent,
   SuggestionsComponent,
+  MapOffersComponent,
 	],
 	imports: [BrowserModule, AppRoutingModule],
 	providers: [],

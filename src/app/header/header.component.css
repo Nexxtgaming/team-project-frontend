@@ -50,6 +50,10 @@ a:link, a:visited, a:hover, a:active {
   position: relative;
 }
 
+.dropdown:active, .dropdown:hover {
+  margin-bottom: 2px;
+}
+
 .dropdown:active .sub, .dropdown:hover .sub {
   display: flex;
   flex-direction: column;
@@ -63,6 +67,7 @@ a:link, a:visited, a:hover, a:active {
   align-items: center;
   border: 1px solid rgba(63, 140, 99, 0.21);
   z-index: 5;
+  text-align: center;
 }
 
 .sub a {

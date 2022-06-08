@@ -1,0 +1,96 @@
+<div class="full-container">
+  <section>
+    <div class="stack">
+      <div class="background-picture">
+        <app-header></app-header>
+      </div>
+
+        <div class="content">
+          <div *ngIf="isSignedUp; else signupForm">
+            Your registration is successful. Please login!
+          </div>
+
+          <ng-template #signupForm>
+            <div style="max-width:350px;">
+              <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                <div class="form-group">
+                  <label for="username" id="username">Username</label>
+                  <input type="text" class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel"
+                         required maxlength="20" minlength="3"/>
+                  <div *ngIf="f.submitted && username.invalid">
+                    <div *ngIf="['username.errors?.required']">Username is required</div>
+                    <div *ngIf="['username.errors?.minlength']">Username must be at least 3 characters</div>
+                    <div *ngIf="['username.errors?.maxlength']">Username must be at most 20 characters</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="password" id="password">Password</label>
+                  <input type="password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"
+                         required maxlength="40" minlength="6"/>
+                  <div *ngIf="f.submitted && password.invalid">
+                    <div *ngIf="['password.errors?.required']">Password is required</div>
+                    <div *ngIf="['password.errors?.minlength']">Password must be at least 6 characters</div>
+                    <div *ngIf="['password.errors?.maxlength']">Password must be at most 40 characters</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="name" id="name">Name</label>
+                  <input type="text" class="form-control" name="name" [(ngModel)]="form.name" #name="ngModel"
+                         required maxlength="20"/>
+                  <div *ngIf="f.submitted && name.invalid">
+                    <div *ngIf="['name.errors?.required']">Name is required</div>
+                    <div *ngIf="['name.errors?.maxlength']">Name must be at most 20 characters</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label id="surname">Surname</label>
+                  <input type="text" class="form-control" name="surname" [(ngModel)]="form.surname" #surname="ngModel"
+                         required maxlength="20">
+                  <div *ngIf="f.submitted && surname.invalid">
+                    <div *ngIf="['surname.errors?.required']">Surname is required</div>
+                    <div *ngIf="['surname.errors?.maxlength']">Surname must be at most 20 characters</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label id="phone">Phone number</label>
+                  <input type="tel" class="form-control" name="phone" [(ngModel)]="form.phone" #phone="ngModel"
+                         required maxlength="13">
+                  <div *ngIf="f.submitted && phone.invalid">
+                    <div *ngIf="['phone.errors?.required']">Phone number is required</div>
+                    <div *ngIf="['phone.errors?.maxlength']">Phone number must be at most 13 characters</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label id="email">Email</label>
+                  <input type="email" class="form-control" name="email" [(ngModel)]="form.email" #email="ngModel"
+                         required maxlength="50">
+                  <div *ngIf="f.submitted && email.invalid">
+                    <div *ngIf="['email.errors?.required']">Email is required</div>
+                    <div *ngIf="['email.errors?.maxlength']">Email must be at most 50 characters</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p>Please select the type of your account :</p>
+                  <input type="radio" id="refugee" name="account_type" value="refugee" [(ngModel)]="form.account_type" #account_type="ngModel" required>
+                  <label for="refugee">Refugee</label>
+                  <input type="radio" id="helper" name="account_type" value="helper" [(ngModel)]="form.account_type" #account_type="ngModel" required>
+                  <label for="helper">Helper</label>
+                  <div *ngIf="f.submitted && account_type.invalid">
+                    <div *ngIf="['account_type.errors?.required']">Account type is required</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-primary">Register</button>
+                  <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
+                    Signup failed!<br/>{{errorMessage}}
+                  </div>
+                </div>
+              </form>
+            </div>
+          </ng-template>
+        </div>
+
+        <app-footer></app-footer>
+      </div>
+  </section>
+</div>

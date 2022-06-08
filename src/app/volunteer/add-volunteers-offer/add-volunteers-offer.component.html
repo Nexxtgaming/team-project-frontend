@@ -1,0 +1,24 @@
+<div class="full-container">
+  <section>
+    <div class="stack">
+      <div class="background-picture">
+        <app-header></app-header>
+      </div>
+      <div class="content">
+        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+            <label for="title" class="form-label">Please enter the title of your offer :</label>
+            <input id="title" name="title" type="text" placeholder="title" class="form-input" [(ngModel)]="form.title" #title="ngModel"/>
+            <label for="city" class="form-label">Please enter the city where you want to provide help :</label>
+            <input id="city" name="city" type="text" placeholder="City" class="form-input-2" [(ngModel)]="form.city" #city="ngModel"/>
+            <label for="date" class="form-label-2">Please enter the date of expiration for your offer :</label>
+            <input id="date" name="date" type="date" class="form-input-2" [(ngModel)]="form.date" #date="ngModel"/>
+            <label for="description" class="form-label-2">Please enter a description for you offer :</label>
+            <textArea id="description" name="description" placeholder="Please enter a description for you offer :" class="form-text-area" [(ngModel)]="form.description" #description="ngModel"></textArea>
+            <button class="form-submit-button">Add offer</button>
+        </form>
+        <button (click)="goBack()">Go Back</button>
+      </div>
+      <app-footer></app-footer>
+    </div>
+  </section>
+</div>

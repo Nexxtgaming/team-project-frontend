@@ -6,7 +6,12 @@
       </div>
 
       <div id="content">
-        <google-map></google-map>
+        <google-map
+          width="50%"
+          [zoom]="zoom"
+          [center]="center"
+          [options]="options"
+        ></google-map>
       </div>
 
       <app-footer></app-footer>

@@ -1,0 +1,9 @@
+<div class="offer" (click)="showDescriptionDiv()" *ngIf="offer">
+  <span class="badge">{{offer.id}}</span>
+  <span class="user">Provide by {{offer.userId}}</span>
+  <span class="title">Title : {{offer.title}}</span>
+  <span class="city">City : {{offer.city}}</span>
+  <div class="description" *ngIf="showDescription">
+    Description : <br> {{offer.description}}
+  </div>
+</div>

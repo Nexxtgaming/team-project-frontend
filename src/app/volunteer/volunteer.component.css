@@ -1,0 +1,250 @@
+.full-container {
+  border-radius: 0;
+  position: relative;
+  margin-left: calc(50% - 50vw);
+}
+
+section {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: Assistant, sans-serif;
+  margin-left: calc(50% - 50vw);
+}
+
+.background-picture {
+  position: relative;
+  background-image: url("./assets/background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 0;
+}
+
+.container {
+  position: relative;
+  height: 640px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 70px;
+  height: auto;
+  padding-bottom: 30px;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+.columns {
+  position: relative;
+}
+.div {
+  display: flex;
+}
+@media (max-width: 999px) {
+  .div {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: calc(25% - 10px);
+  margin-left: 0px;
+}
+@media (max-width: 999px) {
+  .column {
+    width: 100%;
+  }
+}
+.categories {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 20px;
+  flex-grow: 1;
+  justify-content: flex-start;
+}
+.categorie {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-top: 0;
+  width: 100%;
+  flex-grow: 0;
+  align-self: center;
+  height: auto;
+  background-color: rgba(155, 155, 155, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 16px;
+}
+.categorie:hover {
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 1);
+}
+.div-2 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 0;
+  line-height: normal;
+  height: auto;
+  text-align: center;
+  margin-right: auto;
+  padding-left: 10px;
+  margin-left: auto;
+  align-self: center;
+}
+.div-3 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: auto;
+  width: 50px;
+  min-height: 20px;
+  min-width: 20px;
+  overflow: hidden;
+  flex-grow: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 50px;
+  margin-right: 050px;
+  background-image: url("./assets/food_logo.jpg");
+}
+.image {
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.image-sizer {
+  width: 100%;
+  padding-top: 65.41%;
+  pointer-events: none;
+  font-size: 0;
+}
+.div-4 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 0;
+  line-height: normal;
+  height: auto;
+  text-align: center;
+  margin-right: auto;
+  padding-left: 10px;
+  margin-left: auto;
+  align-self: center;
+}
+.div-5 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: auto;
+  width: 50px;
+  min-height: 20px;
+  min-width: 20px;
+  overflow: hidden;
+  flex-grow: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 50px;
+  margin-right: 50px;
+  background-image: url("./assets/money_logo.jpg");
+}
+.div-6 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 0;
+  line-height: normal;
+  height: auto;
+  text-align: center;
+  margin-right: auto;
+  padding-left: 10px;
+  margin-left: auto;
+  align-self: center;
+}
+.div-7 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 50px;
+  min-height: 20px;
+  min-width: 20px;
+  overflow: hidden;
+  flex-grow: 0;
+  height: 50px;
+  margin: auto 50px auto auto;
+  background-image: url("./assets/heath_logo.jpg");
+}
+.offer-list {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: calc(75% - 10px);
+  margin-left: 20px;
+  border: solid gray 2px;
+}
+@media (max-width: 999px) {
+  .offer-list {
+    width: 100%;
+  }
+}
+.div-8 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 20px;
+  line-height: normal;
+  height: auto;
+  text-align: center;
+  width: 100%;
+}
+.div-9 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 20px;
+  height: auto;
+  padding-bottom: 30px;
+}
+ul {
+  align-items: center;
+  list-style: none;
+  width: 100%;
+}
+
+button {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 20px;
+  appearance: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: rgba(75, 139, 104, 1);
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  margin-right: auto;
+}

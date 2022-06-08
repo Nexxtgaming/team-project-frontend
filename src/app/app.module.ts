@@ -13,6 +13,10 @@ import { TwitterFeedComponent } from './home/information/twitter-feed/twitter-fe
 import { LogoComponent } from './footer/logo/logo.component';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
 import { MapOffersComponent } from './map-offers/map-offers.component';
+import { VolunteerComponent } from './volunteer/volunteer.component';
+import { VolunteersOfferComponent } from './volunteer/volunteers-offer/volunteers-offer.component';
+import { AddVolunteersOfferComponent } from './volunteer/add-volunteers-offer/add-volunteers-offer.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
 	declarations: [
@@ -27,8 +31,11 @@ import { MapOffersComponent } from './map-offers/map-offers.component';
   LogoComponent,
   SuggestionsComponent,
   MapOffersComponent,
+  VolunteerComponent,
+  VolunteersOfferComponent,
+  AddVolunteersOfferComponent,
 	],
-	imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })

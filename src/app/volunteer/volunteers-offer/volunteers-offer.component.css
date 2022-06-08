@@ -1,0 +1,11 @@
+.offer {
+}
+
+.badge {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.user, .title, .city {
+  padding: 6px;
+}

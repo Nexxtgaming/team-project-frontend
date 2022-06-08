@@ -16,7 +16,12 @@ import { MapOffersComponent } from './map-offers/map-offers.component';
 import { VolunteerComponent } from './volunteer/volunteer.component';
 import { VolunteersOfferComponent } from './volunteer/volunteers-offer/volunteers-offer.component';
 import { AddVolunteersOfferComponent } from './volunteer/add-volunteers-offer/add-volunteers-offer.component';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
+import { HttpClientModule } from '@angular/common/http';
+import { httpInterceptorProviders } from './auth/auth-interceptor';
+import { RoleGuard } from "./guards/role.guard";
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
 	declarations: [
@@ -26,17 +31,19 @@ import {FormsModule} from "@angular/forms";
 		CarouselComponent,
 		InformationComponent,
 		FooterComponent,
-  LinksComponent,
-  TwitterFeedComponent,
-  LogoComponent,
-  SuggestionsComponent,
-  MapOffersComponent,
-  VolunteerComponent,
-  VolunteersOfferComponent,
-  AddVolunteersOfferComponent,
+		LinksComponent,
+		TwitterFeedComponent,
+		LogoComponent,
+		SuggestionsComponent,
+		MapOffersComponent,
+		VolunteerComponent,
+		VolunteersOfferComponent,
+		AddVolunteersOfferComponent,
+		RegisterComponent,
+  LoginComponent,
 	],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
-	providers: [],
+	imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
+	providers: [httpInterceptorProviders],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

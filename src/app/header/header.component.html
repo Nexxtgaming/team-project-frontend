@@ -11,5 +11,7 @@
     </li>
     <li><a><p>News</p></a></li>
     <li><a routerLink="/suggestions"><p>Suggestions</p></a></li>
+    <li *ngIf="token == '{}'"><a routerLink="/signup"><p>Register</p></a></li>
+    <li *ngIf="token != '{}'"><button (click)="logout()">Logout</button></li>
   </ul>
 </div>

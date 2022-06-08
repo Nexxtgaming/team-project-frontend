@@ -44,7 +44,8 @@
                   </li>
                 </ul>
               </div>
-              <a><button routerLink="add-offer">Add volunteers offer</button></a>
+              <a *ngIf="!role" [routerLink]="'/signin'">Login</a>
+              <a *ngIf="role == 'helper'"><button routerLink="add-offer">Add volunteers offer</button></a>
             </div>
           </div>
         </div>

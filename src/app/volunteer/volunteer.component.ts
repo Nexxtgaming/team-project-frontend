@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VolunteersOffer } from '../offers/volunteers-offer.model';
-import {OFFERS} from "./mock-volunteers-offer";
-import {TokenStorageService} from "../auth/token-storage.service";
+import { TokenStorageService } from '../auth/token-storage.service';
+import { VolunteerService } from "./volunteer.service";
 
 @Component({
   selector: 'app-volunteer',
@@ -13,11 +13,17 @@ export class VolunteerComponent implements OnInit {
   offerList!: VolunteersOffer[];
   role!: string;
 
-  constructor(private token: TokenStorageService) {}
+  constructor(private volunteerService: VolunteerService,
+              private token: TokenStorageService) {}
 
 
   ngOnInit(): void {
-    this.offerList = OFFERS;
+    this.getRole();
+    this.getOfferList();
+
+  }
+
+  getRole() {
     this.token.getAuthorities().every(role => {
       if (role === 'ROLE_REFUGEE') {
         this.role = 'refugee';
@@ -36,4 +42,9 @@ export class VolunteerComponent implements OnInit {
     });
   }
 
+  getOfferList() {
+    this.volunteerService.getOfferList().subscribe(
+      offerList => this.offerList = offerList
+    )
+  }
 }

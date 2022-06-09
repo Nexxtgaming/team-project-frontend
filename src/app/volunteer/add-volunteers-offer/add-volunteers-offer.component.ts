@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import {VolunteerService} from "../volunteer.service";
+import {TokenStorageService} from "../../auth/token-storage.service";
+import {OfferRequest} from "../volunteers-offer/offer-request";
 
 @Component({
   selector: 'app-add-volunteers-offer',
@@ -9,13 +12,25 @@ import { Location } from '@angular/common';
 export class AddVolunteersOfferComponent implements OnInit {
 
   form: any = {}
-  constructor(private location : Location) { }
+  offer!: OfferRequest;
+
+  constructor(private volunteerService: VolunteerService,
+              private tokenService: TokenStorageService,
+              private location : Location) { }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    return false;
+    console.log(this.form)
+
+    this.offer = new OfferRequest(
+      this.form.title,
+      this.form.description,
+      this.form.city,
+    );
+
+    this.volunteerService.addOffer(this.offer).subscribe();
   }
 
   goBack() {

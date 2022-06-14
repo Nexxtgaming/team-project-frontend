@@ -1,27 +1,27 @@
-import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, of, tap} from 'rxjs';
-import { VolunteersOffer } from '../offers/volunteers-offer.model';
-import { OfferRequest } from '../offers/offer-request';
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {catchError, Observable, of} from "rxjs";
+import {LookingForOffer} from "../offers/looking-for-offer";
+import {LookingForRequest} from "../offers/looking-for-request";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class VolunteerService {
-  private volunteerOfferURL = 'http://localhost:8083/api/volunteersOffer';
+export class RefugeeService {
+  private lookingForURL = 'http://localhost:8083/api/lookingForOffers';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  getOfferList(): Observable<VolunteersOffer[]> {
-    return this.http.get<VolunteersOffer[]>(this.volunteerOfferURL + "/all", httpOptions)
+  getOfferList(): Observable<LookingForOffer[]> {
+    return this.http.get<LookingForOffer[]>(this.lookingForURL + "/all", httpOptions)
   }
 
-  addOffer(offer: OfferRequest): Observable<OfferRequest> {
-    return this.http.post<OfferRequest>(this.volunteerOfferURL, offer, httpOptions).pipe(
-      catchError(this.handleError<OfferRequest>('addOffer')),
+  addOffer(offer: LookingForRequest): Observable<LookingForRequest> {
+    return this.http.post<LookingForRequest>(this.lookingForURL, offer, httpOptions).pipe(
+      catchError(this.handleError<LookingForRequest>('addOffer')),
     );
   }
 

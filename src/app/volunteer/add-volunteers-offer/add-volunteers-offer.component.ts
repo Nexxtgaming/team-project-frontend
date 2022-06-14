@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import {VolunteerService} from "../volunteer.service";
 import {TokenStorageService} from "../../auth/token-storage.service";
-import {OfferRequest} from "../volunteers-offer/offer-request";
+import {OfferRequest} from "../../offers/offer-request";
 
 @Component({
   selector: 'app-add-volunteers-offer',
@@ -22,7 +22,6 @@ export class AddVolunteersOfferComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form)
 
     this.offer = new OfferRequest(
       this.form.title,

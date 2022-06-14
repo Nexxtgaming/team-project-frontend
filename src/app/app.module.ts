@@ -23,6 +23,9 @@ import { httpInterceptorProviders } from './auth/auth-interceptor';
 import { RoleGuard } from "./guards/role.guard";
 import { LoginComponent } from './login/login.component';
 import {GoogleMapsModule} from "@angular/google-maps";
+import { LookingForComponent } from './looking-for/looking-for.component';
+import { LookingForOfferComponent } from './looking-for/looking-for-offer/looking-for-offer.component';
+import { CreateLookingForOfferComponent } from './looking-for/create-looking-for-offer/create-looking-for-offer.component';
 
 @NgModule({
 	declarations: [
@@ -42,6 +45,9 @@ import {GoogleMapsModule} from "@angular/google-maps";
 		AddVolunteersOfferComponent,
 		RegisterComponent,
   LoginComponent,
+  LookingForComponent,
+  LookingForOfferComponent,
+  CreateLookingForOfferComponent,
 	],
 	imports: [BrowserModule, HttpClientModule, AppRoutingModule, GoogleMapsModule, FormsModule],
 	providers: [httpInterceptorProviders],

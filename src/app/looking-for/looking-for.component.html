@@ -1,0 +1,26 @@
+<div class="full-container">
+  <section>
+    <div class="stack">
+      <div class="background-picture">
+        <app-header></app-header>
+      </div>
+
+      <div class="content">
+
+
+        <div class="div-8">
+          <h2>Looking for offers</h2>
+          <ul>
+            <li *ngFor="let offer of offerList">
+              <app-looking-for-request [lookingfor]="offer"></app-looking-for-request>
+            </li>
+          </ul>
+        </div>
+        <a *ngIf="!role" [routerLink]="'/signin'">Login</a>
+        <a *ngIf="role == 'refugee'"><button routerLink="add-offer">Add volunteers offer</button></a>
+
+      </div>
+      <app-footer></app-footer>
+    </div>
+  </section>
+</div>

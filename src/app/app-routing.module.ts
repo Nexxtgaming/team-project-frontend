@@ -8,6 +8,10 @@ import {AddVolunteersOfferComponent} from "./volunteer/add-volunteers-offer/add-
 import {RegisterComponent} from "./register/register.component";
 import {LoginComponent} from "./login/login.component";
 import {httpInterceptorProviders} from "./auth/auth-interceptor";
+import {LookingForComponent} from "./looking-for/looking-for.component";
+import {
+  CreateLookingForOfferComponent
+} from "./looking-for/create-looking-for-offer/create-looking-for-offer.component";
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent },
@@ -15,6 +19,8 @@ const routes: Routes = [
   {path: 'offers', component: MapOffersComponent},
   {path: 'volunteer', component: VolunteerComponent},
   {path: "volunteer/add-offer", component: AddVolunteersOfferComponent},
+  {path: "looking-for", component: LookingForComponent},
+  {path: "looking-for/add-offer", component: CreateLookingForOfferComponent},
   {path: "signup", component: RegisterComponent},
   {path: "signin", component: LoginComponent},
 ];

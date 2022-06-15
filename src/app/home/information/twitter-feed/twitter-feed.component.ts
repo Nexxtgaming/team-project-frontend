@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-twitter-feed',
@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TwitterFeedComponent implements OnInit {
 
-  constructor() { }
+  data!: any;
+
+  constructor() {
+    this.data = {sourceType: 'url', url: "UKRINFORM"}
+  }
 
   ngOnInit(): void {
   }

@@ -23,6 +23,7 @@ import { httpInterceptorProviders } from './auth/auth-interceptor';
 import { RoleGuard } from "./guards/role.guard";
 import { LoginComponent } from './login/login.component';
 import {GoogleMapsModule} from "@angular/google-maps";
+import { NewsPageComponent } from './news-page/news-page.component';
 
 @NgModule({
 	declarations: [
@@ -42,6 +43,7 @@ import {GoogleMapsModule} from "@angular/google-maps";
 		AddVolunteersOfferComponent,
 		RegisterComponent,
   LoginComponent,
+  NewsPageComponent,
 	],
 	imports: [BrowserModule, HttpClientModule, AppRoutingModule, GoogleMapsModule, FormsModule],
 	providers: [httpInterceptorProviders],

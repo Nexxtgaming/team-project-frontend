@@ -3,6 +3,7 @@ import {MapOfferService} from "./map-offer.service";
 import {Offer} from "../offers/offer.model";
 import {TokenStorageService} from "../auth/token-storage.service";
 
+
 @Component({
   selector: 'app-map-offers',
   templateUrl: './map-offers.component.html',
@@ -11,7 +12,9 @@ import {TokenStorageService} from "../auth/token-storage.service";
 export class MapOffersComponent implements OnInit {
 
   zoom = 12
+  geocode!: google.maps.Geocoder
   center!: google.maps.LatLngLiteral
+  pinpoint?: google.maps.LatLng
   options: google.maps.MapOptions = {
     zoomControl: true,
     scrollwheel: false,
@@ -85,4 +88,16 @@ export class MapOffersComponent implements OnInit {
       list => this.offerList = list
     )
   }
+
+  getAddress(address: string): void {
+    this.geocode = new google.maps.Geocoder()
+    this.geocode.geocode({address}, (results, status) => {
+      if (status === 'OK') {
+        if (results) {
+          this.pinpoint = results[0].geometry.location
+        }
+      }
+    })
+  }
+
 }

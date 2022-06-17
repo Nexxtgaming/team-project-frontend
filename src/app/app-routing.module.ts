@@ -9,9 +9,13 @@ import {RegisterComponent} from "./register/register.component";
 import {LoginComponent} from "./login/login.component";
 import {httpInterceptorProviders} from "./auth/auth-interceptor";
 import {LookingForComponent} from "./looking-for/looking-for.component";
-import {
-  CreateLookingForOfferComponent
-} from "./looking-for/create-looking-for-offer/create-looking-for-offer.component";
+import { CreateLookingForOfferComponent } from './looking-for/create-looking-for-offer/create-looking-for-offer.component';
+import { AccommodationOfferComponent } from './map-offers/accommodation-offer/accommodation-offer.component';
+import { LanguageCourseOfferComponent } from './map-offers/language-course-offer/language-course-offer.component';
+import { LegalAdviceOfferComponent } from './map-offers/legal-advice-offer/legal-advice-offer.component';
+import { TranslationOfferComponent } from './map-offers/translation-offer/translation-offer.component';
+import { TransportationOfferComponent } from './map-offers/transportation-offer/transportation-offer.component';
+
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent },
@@ -23,6 +27,11 @@ const routes: Routes = [
   {path: "looking-for/add-offer", component: CreateLookingForOfferComponent},
   {path: "signup", component: RegisterComponent},
   {path: "signin", component: LoginComponent},
+  {path: "offers/accommodation", component: AccommodationOfferComponent},
+  {path: "offers/language-course", component: LanguageCourseOfferComponent},
+  {path: "offers/legal-advice", component: LegalAdviceOfferComponent},
+  {path: "offers/translation", component: TranslationOfferComponent},
+  {path: "offers/transportation", component: TransportationOfferComponent}
 ];
 
 @NgModule({

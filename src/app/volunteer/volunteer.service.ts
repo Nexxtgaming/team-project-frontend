@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of, tap} from 'rxjs';
 import { VolunteersOffer } from '../offers/volunteers-offer.model';
-import { OfferRequest } from '../offers/offer-request';
+import { OfferRequest } from '../offers/request/offer-request';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),

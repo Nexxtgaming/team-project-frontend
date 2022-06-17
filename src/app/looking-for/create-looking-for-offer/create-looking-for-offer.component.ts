@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {LookingForRequest} from "../../offers/looking-for-request";
+import {LookingForRequest} from "../../offers/request/looking-for-request";
 import {RefugeeService} from "../refugee.service";
 import {TokenStorageService} from "../../auth/token-storage.service";
 import {Location} from "@angular/common";
-import {OfferRequest} from "../../offers/offer-request";
+import {OfferRequest} from "../../offers/request/offer-request";
 import {LookingForTypes} from "../../offers/LookingForType";
 
 @Component({

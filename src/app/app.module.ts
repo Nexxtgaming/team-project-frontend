@@ -1,5 +1,5 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,12 +20,16 @@ import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { httpInterceptorProviders } from './auth/auth-interceptor';
-import { RoleGuard } from "./guards/role.guard";
 import { LoginComponent } from './login/login.component';
-import {GoogleMapsModule} from "@angular/google-maps";
+import { GoogleMapsModule } from '@angular/google-maps';
 import { LookingForComponent } from './looking-for/looking-for.component';
 import { LookingForOfferComponent } from './looking-for/looking-for-offer/looking-for-offer.component';
 import { CreateLookingForOfferComponent } from './looking-for/create-looking-for-offer/create-looking-for-offer.component';
+import { AccommodationOfferComponent } from './map-offers/accommodation-offer/accommodation-offer.component';
+import { LanguageCourseOfferComponent } from './map-offers/language-course-offer/language-course-offer.component';
+import { LegalAdviceOfferComponent } from './map-offers/legal-advice-offer/legal-advice-offer.component';
+import { TranslationOfferComponent } from './map-offers/translation-offer/translation-offer.component';
+import { TransportationOfferComponent } from './map-offers/transportation-offer/transportation-offer.component';
 
 @NgModule({
 	declarations: [
@@ -44,14 +48,18 @@ import { CreateLookingForOfferComponent } from './looking-for/create-looking-for
 		VolunteersOfferComponent,
 		AddVolunteersOfferComponent,
 		RegisterComponent,
-  LoginComponent,
-  LookingForComponent,
-  LookingForOfferComponent,
-  CreateLookingForOfferComponent,
+		LoginComponent,
+		LookingForComponent,
+		LookingForOfferComponent,
+		CreateLookingForOfferComponent,
+		AccommodationOfferComponent,
+		LanguageCourseOfferComponent,
+		LegalAdviceOfferComponent,
+		TranslationOfferComponent,
+		TransportationOfferComponent,
 	],
 	imports: [BrowserModule, HttpClientModule, AppRoutingModule, GoogleMapsModule, FormsModule],
 	providers: [httpInterceptorProviders],
 	bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}

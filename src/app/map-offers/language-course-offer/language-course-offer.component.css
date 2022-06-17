@@ -32,16 +32,14 @@ section {
 .content {
   display: flex;
   flex-direction: column;
-  position: center;
-  align-items: center;
+  position: relative;
   margin-top: 70px;
   height: auto;
   padding-bottom: 30px;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
   font-family: "Alegreya Sans", sans-serif;
 }
-
 .form-form {
   display: flex;
   flex-direction: column;

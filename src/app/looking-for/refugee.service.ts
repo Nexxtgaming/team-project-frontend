@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, of} from "rxjs";
 import {LookingForOffer} from "../offers/looking-for-offer";
-import {LookingForRequest} from "../offers/looking-for-request";
+import {LookingForRequest} from "../offers/request/looking-for-request";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),

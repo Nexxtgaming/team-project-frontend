@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import {VolunteerService} from "../volunteer.service";
 import {TokenStorageService} from "../../auth/token-storage.service";
-import {OfferRequest} from "../../offers/offer-request";
+import {OfferRequest} from "../../offers/request/offer-request";
 
 @Component({
   selector: 'app-add-volunteers-offer',

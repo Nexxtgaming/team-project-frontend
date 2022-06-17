@@ -1,5 +1,5 @@
 import {OfferRequest} from "./offer-request";
-import {LookingForTypes} from "./LookingForType";
+import {LookingForTypes} from "../LookingForType";
 
 export class LookingForRequest extends OfferRequest {
   type!: LookingForTypes;

@@ -13,6 +13,30 @@
           [options]="options"
         ></google-map>
       </div>
+      <div>
+        <div>
+          <ul>
+            <li *ngFor="let offer of offerList">
+              <app-volunteers-offer [offer]="offer"></app-volunteers-offer>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <button (click)="getAccommodationOffer()">Accommodation Offer</button>
+          <button (click)="getLanguageOffer()">Language Course Offer</button>
+          <button (click)="getLegalAdviceOffer()">Legal Advice Offer</button>
+          <button (click)="getTranslationOffer()">Translation Offer</button>
+          <button (click)="getTransportationOffer()">Transportation Offer</button>
+        </div>
+        <div>
+          <a *ngIf="!role" [routerLink]="'/signin'">Login</a>
+          <a *ngIf="role == 'helper'"><button routerLink="accommodation">Add accommodation offer</button></a>
+          <a *ngIf="role == 'helper'"><button routerLink="language-course">Add language course offer</button></a>
+          <a *ngIf="role == 'helper'"><button routerLink="legal-advice">Add legal advice offer</button></a>
+          <a *ngIf="role == 'helper'"><button routerLink="translation">Add translation offer</button></a>
+          <a *ngIf="role == 'helper'"><button routerLink="transportation">Add transportation offer</button></a>
+        </div>
+      </div>
 
       <app-footer></app-footer>
     </div>

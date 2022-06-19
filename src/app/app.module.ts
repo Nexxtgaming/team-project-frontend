@@ -31,6 +31,7 @@ import { TranslationOfferComponent } from './map-offers/translation-offer/transl
 import { TransportationOfferComponent } from './map-offers/transportation-offer/transportation-offer.component';
 import {NgxTwitterTimelineModule} from 'ngx-twitter-timeline';
 import {RouterModule} from "@angular/router";
+import { NewsPageComponent } from './news-page/news-page.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import {RouterModule} from "@angular/router";
     LanguageCourseOfferComponent,
     LegalAdviceOfferComponent,
     TranslationOfferComponent,
-    TransportationOfferComponent
+    TransportationOfferComponent,
+    NewsPageComponent
   ],
   imports: [RouterModule, BrowserModule, HttpClientModule, AppRoutingModule, GoogleMapsModule, FormsModule, NgxTwitterTimelineModule],
   providers: [httpInterceptorProviders],

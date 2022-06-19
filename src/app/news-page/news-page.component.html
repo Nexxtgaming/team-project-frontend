@@ -1,0 +1,55 @@
+<div class="full-container">
+  <section>
+    <div class="stack">
+      <div class="background-picture">
+        <app-header></app-header>
+      </div>
+      <div class="column">
+
+        <div class="ukrinform">
+          <a href="https://www.ukrinform.ua/">
+            <img style="width:300px;" src="/img/logo_ukr.svg" alt="">
+          </a>
+          <li *ngFor="let article of articlesUkrinform">
+            <a href="{{article.articleUrl}}">
+              <h2>{{article.title}}</h2>
+              <img href="{{article.imgUrl}}" class="img_article">
+            </a>
+          </li>
+        </div>
+
+        <div class="warinukrain">
+          <a href="https://war.ukraine.ua/ru">
+            war.urkaine.ua
+          </a>
+          <li *ngFor="let article of articlesWarUkrain">
+            <a href="https://war.ukraine.ua/ru/news/">
+              <h2>{{article.title}}</h2>
+              <p>{{article.text}}</p>
+            </a>
+          </li>
+        </div>
+
+        <div class="visitukrain">
+          <a href="https://visitukraine.today/uk/blog">Visit Ukraine Today</a>
+          <li *ngFor="let article of articlesVisitUkraine">
+            <a href="{{article.articleUrl}}">
+              <h2>{{article.title}}</h2>
+              <img href="{{article.imgUrl}}" class="img_article">
+            </a>
+          </li>
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <!--FOOTER-->
+      <app-footer></app-footer>
+      <!--FOOTER-->
+    </div>
+  </section>
+</div>

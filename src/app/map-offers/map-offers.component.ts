@@ -40,6 +40,14 @@ export class MapOffersComponent implements OnInit {
       }
     })
     this.getRole();
+
+    let m: google.maps.Marker = new google.maps.Marker({
+      position: this.center,
+      label: "You",
+      title: "You're here"
+    })
+    
+    this.markers.push(m);
   }
 
   getRole() {

@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { TokenStorageService } from '../auth/token-storage.service';
-import { ArticleService } from "./article.service";
+import {Component, OnInit} from '@angular/core';
+import {ArticleService} from "./article.service";
 import {Article} from "./article.model";
 
 @Component({
@@ -9,15 +8,14 @@ import {Article} from "./article.model";
   styleUrls: ['./news-page.component.css']
 })
 export class NewsPageComponent implements OnInit {
-  private articlesVisitUkraine!: Article[];
-  private articlesWarUkrain!: Article[];
-  private articlesUkrinform!: Article[]
-  private visitUkraine = "https://visitukraine.today/uk/blog"; //Img + title + url_article
-  private warUkraine = "https://war.ukraine.ua/ru/news/"; //Title + text
-  private ukrinform = "https://www.ukrinform.ua/"; //Img + title + url_article
+  articlesVisitUkraine!: Article[];
+  articlesWarUkrain!: Article[];
+  articlesUkrinform!: Article[]
+  visitUkraine = "https://visitukraine.today/uk/blog"; //Img + title + url_article
+  warUkraine = "https://war.ukraine.ua/ru/news/"; //Title + text
+  ukrinform = "https://www.ukrinform.ua/"; //Img + title + url_article
 
-  constructor(private articleService: ArticleService,
-              private token: TokenStorageService) {
+  constructor(private articleService: ArticleService) {
   }
 
   ngOnInit(): void {
@@ -38,7 +36,7 @@ export class NewsPageComponent implements OnInit {
     this.articleService.createArticleByUrl(this.ukrinform)
   }
 
-  clearArticle(){
+  clearArticle() {
     this.articleService.clearArticle()
   }
 }

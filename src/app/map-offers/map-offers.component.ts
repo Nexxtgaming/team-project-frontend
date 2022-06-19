@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {MapOfferService} from "./map-offer.service";
 import {TokenStorageService} from "../auth/token-storage.service";
 import {MapOffer} from "../offers/map-offer";
+import {GoogleMap} from "@angular/google-maps";
 
 
 @Component({
@@ -10,6 +11,7 @@ import {MapOffer} from "../offers/map-offer";
   styleUrls: ['./map-offers.component.css']
 })
 export class MapOffersComponent implements OnInit {
+  @ViewChild(GoogleMap, {static: false}) map!: GoogleMap
 
   zoom = 12
   geocode!: google.maps.Geocoder
@@ -20,10 +22,9 @@ export class MapOffersComponent implements OnInit {
     zoomControl: true,
     scrollwheel: false,
     disableDoubleClickZoom: true,
-    maxZoom: 15,
-    minZoom: 8,
+    maxZoom: 50,
+    minZoom: 0,
   }
-
   markers: google.maps.Marker[] = [];
   offerList!: MapOffer[];
   role!: string;
@@ -40,14 +41,6 @@ export class MapOffersComponent implements OnInit {
       }
     })
     this.getRole();
-
-    let m: google.maps.Marker = new google.maps.Marker({
-      position: this.center,
-      label: "You",
-      title: "You're here"
-    })
-
-    this.markers.push(m);
   }
 
   getRole() {
@@ -69,78 +62,86 @@ export class MapOffersComponent implements OnInit {
     });
   }
 
-  getAddress(address: string | undefined): void {
-    this.geocode = new google.maps.Geocoder()
-    this.geocode.geocode({address}, (results, status) => {
-      if (status === 'OK') {
-        if (results) {
-          this.position = results[0].geometry.location
-        }
-      }
-    })
+  insertPinpoint(type: string) {
+    this.markers.splice(0);
+    for (let offer of this.offerList) {
+      this.addMarker(offer.address, type, offer.title);
+      console.warn(offer.address + " " + type + " " + offer.title);
+    }
   }
 
   addMarker(address: string | undefined, type: string, title: string) {
+
     this.getAddress(address);
 
     let marker = new google.maps.Marker({
       position: this.position,
       label: type,
-      title: title
+      title: title,
+      visible: true
     });
 
     this.markers.push(marker);
+
+    google.maps.event.trigger(this.map, 'zoom_changed');
+  }
+
+  getAddress(address: string | undefined): void {
+    this.geocode = new google.maps.Geocoder()
+    this.geocode.geocode({address}, (results, status) => {
+      if (status === 'OK') {
+        if (results) {
+          this.position = results[0].geometry.location;
+          console.warn("position ok")
+        }
+      }
+    })
   }
 
   getAccommodationOffer() {
-    this.mapOfferService.getAccommodationOfferList().subscribe(
-      list => this.offerList = list
-    )
-
-    this.markers.splice(0);
-    for (let offer of this.offerList) {
-      this.addMarker(offer.address, "Accomodation", offer.title);
-    }
+    this.mapOfferService.getAccommodationOfferList().subscribe({
+      next: (list) => {
+        this.offerList = list;
+        this.insertPinpoint("Accommodation");
+      }
+    })
   }
 
+
   getLanguageOffer() {
-    this.mapOfferService.getLanguageCourseOfferList().subscribe(
-      list => this.offerList = list
-    )
-    this.markers.splice(0);
-    for (let offer of this.offerList) {
-      this.addMarker(offer.address, "Language", offer.title);
-    }
+    this.mapOfferService.getLanguageCourseOfferList().subscribe({
+      next: (list) => {
+        this.offerList = list;
+        this.insertPinpoint("LanguageCourse");
+      }
+    })
   }
 
   getLegalAdviceOffer() {
-    this.mapOfferService.getLegalAdviceOfferList().subscribe(
-      list => this.offerList = list
-    )
-    this.markers.splice(0);
-    for (let offer of this.offerList) {
-      this.addMarker(offer.address, "LegalAdvice", offer.title);
-    }
+    this.mapOfferService.getLegalAdviceOfferList().subscribe({
+      next: (list) => {
+        this.offerList = list;
+        this.insertPinpoint("LegalAdvice");
+      }
+    })
   }
 
   getTranslationOffer() {
-    this.mapOfferService.getTranslationOfferList().subscribe(
-      list => this.offerList = list
-    )
-    this.markers.splice(0);
-    for (let offer of this.offerList) {
-      this.addMarker(offer.address, "Translation", offer.title);
-    }
+    this.mapOfferService.getTranslationOfferList().subscribe({
+      next: (list) => {
+        this.offerList = list;
+        this.insertPinpoint("Translation");
+      }
+    })
   }
 
   getTransportationOffer() {
-    this.mapOfferService.getTransportationOfferList().subscribe(
-      list => this.offerList = list
-    )
-    this.markers.splice(0);
-    for (let offer of this.offerList) {
-      this.addMarker(offer.address, "Transportation", offer.title);
-    }
+    this.mapOfferService.getTransportationOfferList().subscribe({
+      next: (list) => {
+        this.offerList = list;
+        this.insertPinpoint("Transportation");
+      }
+    })
   }
 
 }

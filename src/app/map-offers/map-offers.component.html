@@ -10,8 +10,8 @@
         <h2>Offers</h2>
 
         <google-map width="100%" [zoom]="zoom" [center]="center" [options]="options">
-          <!--          <map-marker *ngFor="let m of markers" [position]="m?.getPosition()" [label]="m?.getLabel()"-->
-          <!--                      [title]="m.getTitle()"></map-marker>-->
+          <map-marker *ngFor="let m of markers" [position]="m.getPosition()!" [label]="m.getLabel()!"
+                      [title]="m.getTitle()!" [visible]="m.getVisible()!"></map-marker>
         </google-map>
 
         <div>

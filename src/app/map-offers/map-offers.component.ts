@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MapOfferService} from "./map-offer.service";
-import {Offer} from "../offers/offer.model";
 import {TokenStorageService} from "../auth/token-storage.service";
+import {MapOffer} from "../offers/map-offer";
 
 
 @Component({
@@ -25,7 +25,7 @@ export class MapOffersComponent implements OnInit {
   }
 
   markers: google.maps.Marker[] = [];
-  offerList!: Offer[];
+  offerList!: MapOffer[];
   role!: string;
 
   constructor(private mapOfferService: MapOfferService,
@@ -46,7 +46,7 @@ export class MapOffersComponent implements OnInit {
       label: "You",
       title: "You're here"
     })
-    
+
     this.markers.push(m);
   }
 
@@ -69,7 +69,7 @@ export class MapOffersComponent implements OnInit {
     });
   }
 
-  getAddress(address: string): void {
+  getAddress(address: string | undefined): void {
     this.geocode = new google.maps.Geocoder()
     this.geocode.geocode({address}, (results, status) => {
       if (status === 'OK') {
@@ -80,7 +80,7 @@ export class MapOffersComponent implements OnInit {
     })
   }
 
-  addMarker(address: string, type: string, title: string) {
+  addMarker(address: string | undefined, type: string, title: string) {
     this.getAddress(address);
 
     let marker = new google.maps.Marker({
@@ -99,7 +99,7 @@ export class MapOffersComponent implements OnInit {
 
     this.markers.splice(0);
     for (let offer of this.offerList) {
-      this.addMarker(offer.city, "Accomodation", offer.title);
+      this.addMarker(offer.address, "Accomodation", offer.title);
     }
   }
 
@@ -109,7 +109,7 @@ export class MapOffersComponent implements OnInit {
     )
     this.markers.splice(0);
     for (let offer of this.offerList) {
-      this.addMarker(offer.city, "Language", offer.title);
+      this.addMarker(offer.address, "Language", offer.title);
     }
   }
 
@@ -119,7 +119,7 @@ export class MapOffersComponent implements OnInit {
     )
     this.markers.splice(0);
     for (let offer of this.offerList) {
-      this.addMarker(offer.city, "LegalAdvice", offer.title);
+      this.addMarker(offer.address, "LegalAdvice", offer.title);
     }
   }
 
@@ -129,7 +129,7 @@ export class MapOffersComponent implements OnInit {
     )
     this.markers.splice(0);
     for (let offer of this.offerList) {
-      this.addMarker(offer.city, "Translation", offer.title);
+      this.addMarker(offer.address, "Translation", offer.title);
     }
   }
 
@@ -139,7 +139,7 @@ export class MapOffersComponent implements OnInit {
     )
     this.markers.splice(0);
     for (let offer of this.offerList) {
-      this.addMarker(offer.city, "Transportation", offer.title);
+      this.addMarker(offer.address, "Transportation", offer.title);
     }
   }
 

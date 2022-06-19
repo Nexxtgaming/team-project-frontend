@@ -9,13 +9,11 @@
 
         <h2>Offers</h2>
 
-        <google-map
-          width="100%"
-          [zoom]="zoom"
-          [center]="center"
-          [options]="options"
-        ></google-map>
-        
+        <google-map width="100%" [zoom]="zoom" [center]="center" [options]="options">
+          <map-marker *ngFor="let marker of markers" [position]="marker.position" [label]="marker.label"
+                      [title]="marker.title" [options]="marker.options"></map-marker>
+        </google-map>
+
       </div>
       <div>
         <div>
@@ -34,11 +32,21 @@
         </div>
         <div>
           <a *ngIf="!role" [routerLink]="'/signin'">Login</a>
-          <a *ngIf="role == 'helper'"><button routerLink="accommodation">Add accommodation offer</button></a>
-          <a *ngIf="role == 'helper'"><button routerLink="language-course">Add language course offer</button></a>
-          <a *ngIf="role == 'helper'"><button routerLink="legal-advice">Add legal advice offer</button></a>
-          <a *ngIf="role == 'helper'"><button routerLink="translation">Add translation offer</button></a>
-          <a *ngIf="role == 'helper'"><button routerLink="transportation">Add transportation offer</button></a>
+          <a *ngIf="role == 'helper'">
+            <button routerLink="accommodation">Add accommodation offer</button>
+          </a>
+          <a *ngIf="role == 'helper'">
+            <button routerLink="language-course">Add language course offer</button>
+          </a>
+          <a *ngIf="role == 'helper'">
+            <button routerLink="legal-advice">Add legal advice offer</button>
+          </a>
+          <a *ngIf="role == 'helper'">
+            <button routerLink="translation">Add translation offer</button>
+          </a>
+          <a *ngIf="role == 'helper'">
+            <button routerLink="transportation">Add transportation offer</button>
+          </a>
         </div>
       </div>
 

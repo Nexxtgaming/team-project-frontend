@@ -14,7 +14,8 @@ export class MapOffersComponent implements OnInit {
   zoom = 12
   geocode!: google.maps.Geocoder
   center!: google.maps.LatLngLiteral
-  pinpoint?: google.maps.LatLng
+  position?: google.maps.LatLng
+
   options: google.maps.MapOptions = {
     zoomControl: true,
     scrollwheel: false,
@@ -23,11 +24,13 @@ export class MapOffersComponent implements OnInit {
     minZoom: 8,
   }
 
+  markers: google.maps.Marker[] = [];
   offerList!: Offer[];
   role!: string;
 
   constructor(private mapOfferService: MapOfferService,
-              private token: TokenStorageService) {}
+              private token: TokenStorageService) {
+  }
 
   ngOnInit() {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -58,46 +61,78 @@ export class MapOffersComponent implements OnInit {
     });
   }
 
+  getAddress(address: string): void {
+    this.geocode = new google.maps.Geocoder()
+    this.geocode.geocode({address}, (results, status) => {
+      if (status === 'OK') {
+        if (results) {
+          this.position = results[0].geometry.location
+        }
+      }
+    })
+  }
+
+  addMarker(address: string, type: string, title: string) {
+    this.getAddress(address);
+
+    let marker = new google.maps.Marker({
+      position: this.position,
+      label: type,
+      title: title
+    });
+
+    this.markers.push(marker);
+  }
 
   getAccommodationOffer() {
     this.mapOfferService.getAccommodationOfferList().subscribe(
       list => this.offerList = list
     )
+
+    this.markers.splice(0);
+    for (let offer of this.offerList) {
+      this.addMarker(offer.city, "Accomodation", offer.title);
+    }
   }
 
   getLanguageOffer() {
     this.mapOfferService.getLanguageCourseOfferList().subscribe(
       list => this.offerList = list
     )
+    this.markers.splice(0);
+    for (let offer of this.offerList) {
+      this.addMarker(offer.city, "Language", offer.title);
+    }
   }
 
   getLegalAdviceOffer() {
     this.mapOfferService.getLegalAdviceOfferList().subscribe(
       list => this.offerList = list
     )
+    this.markers.splice(0);
+    for (let offer of this.offerList) {
+      this.addMarker(offer.city, "LegalAdvice", offer.title);
+    }
   }
 
   getTranslationOffer() {
     this.mapOfferService.getTranslationOfferList().subscribe(
       list => this.offerList = list
     )
+    this.markers.splice(0);
+    for (let offer of this.offerList) {
+      this.addMarker(offer.city, "Translation", offer.title);
+    }
   }
 
   getTransportationOffer() {
     this.mapOfferService.getTransportationOfferList().subscribe(
       list => this.offerList = list
     )
-  }
-
-  getAddress(address: string): void {
-    this.geocode = new google.maps.Geocoder()
-    this.geocode.geocode({address}, (results, status) => {
-      if (status === 'OK') {
-        if (results) {
-          this.pinpoint = results[0].geometry.location
-        }
-      }
-    })
+    this.markers.splice(0);
+    for (let offer of this.offerList) {
+      this.addMarker(offer.city, "Transportation", offer.title);
+    }
   }
 
 }

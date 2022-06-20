@@ -42,57 +42,6 @@
           </li>
         </div>
       </div>
-          <div class="ukrinform">
-            <div class="column">
-              <h3><a href="https://www.ukrinform.ua/">
-                ukrinfom.ua
-              </a></h3>
-
-              <ul>
-                <li *ngFor="let article of articlesUkrinform">
-                  <a href="{{article.articleUrl}}">
-                    <h2>{{article.title}}</h2>
-                    <img src="{{article.imgUrl}}" class="img_article">
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="warinukrain">
-            <div class="column">
-              <h3><a href="https://war.ukraine.ua/ru">
-                war.urkaine.ua
-              </a></h3>
-              <ul>
-                <li *ngFor="let article of articlesWarUkrain">
-                  <a href="https://war.ukraine.ua/ru/news/">
-                    <h2>{{article.title}}</h2>
-                    <p>{{article.text}}</p>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="visitukrain">
-            <div class="column">
-              <h3><a href="https://visitukraine.today/uk/blog">VisitUkraine.today</a></h3>
-              <ul>
-                <li *ngFor="let article of articlesVisitUkraine">
-                  <a href="{{article.articleUrl}}">
-                    <h2>{{article.title}}</h2>
-                    <img src="{{article.imgUrl}}" class="img_article">
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-
       <!--FOOTER-->
       <app-footer></app-footer>
       <!--FOOTER-->

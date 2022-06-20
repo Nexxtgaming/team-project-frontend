@@ -8,6 +8,7 @@ import {AddVolunteersOfferComponent} from "./volunteer/add-volunteers-offer/add-
 import {RegisterComponent} from "./register/register.component";
 import {LoginComponent} from "./login/login.component";
 import {httpInterceptorProviders} from "./auth/auth-interceptor";
+import {NewsPageComponent} from "./news-page/news-page.component";
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: "volunteer/add-offer", component: AddVolunteersOfferComponent},
   {path: "signup", component: RegisterComponent},
   {path: "signin", component: LoginComponent},
+  {path:"news", component:NewsPageComponent}
 ];
 
 @NgModule({

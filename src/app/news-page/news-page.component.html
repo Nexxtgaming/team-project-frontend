@@ -8,12 +8,13 @@
 
         <div class="ukrinform">
           <a href="https://www.ukrinform.ua/">
-            <img style="width:300px;" src="/img/logo_ukr.svg" alt="">
+            Ukrinform
+            <!--<img style="width:300px;" src="/img/logo_ukr.svg" alt="">-->
           </a>
           <li *ngFor="let article of articlesUkrinform">
-            <a href="{{article.articleUrl}}">
+            <a href="https://www.ukrinform.ua/"><!--Supposed to be: [href]="article.articleUrl" but doesnt work idk-->
               <h2>{{article.title}}</h2>
-              <img href="{{article.imgUrl}}" class="img_article">
+              <!--<img href="{{article.imgUrl}}" class="img_article">-->
             </a>
           </li>
         </div>
@@ -33,9 +34,9 @@
         <div class="visitukrain">
           <a href="https://visitukraine.today/uk/blog">Visit Ukraine Today</a>
           <li *ngFor="let article of articlesVisitUkraine">
-            <a href="{{article.articleUrl}}">
+            <a href="https://visitukraine.today/uk/blog"> <!--Supposed to be: [href]="article.articleUrl" but doesnt work idk-->
               <h2>{{article.title}}</h2>
-              <img href="{{article.imgUrl}}" class="img_article">
+              <!--<img href="{{article.imgUrl}}" class="img_article">-->
             </a>
           </li>
         </div>

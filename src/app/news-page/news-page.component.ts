@@ -11,9 +11,10 @@ export class NewsPageComponent implements OnInit {
   articlesVisitUkraine!: Article[];
   articlesWarUkrain!: Article[];
   articlesUkrinform!: Article[]
-  visitUkraine = "https://visitukraine.today/uk/blog"; //Img + title + url_article
-  warUkraine = "https://war.ukraine.ua/ru/news/"; //Title + text
-  ukrinform = "https://www.ukrinform.ua/"; //Img + title + url_article
+
+  private visitUkraine = "https://visitukraine.today/uk/blog"; //1 Img + title + url_article
+  private warUkraine = "https://war.ukraine.ua/ru/news/"; //2 Title + text
+  private ukrinform = "https://www.ukrinform.ua/"; //3 sImg + title + url_article
 
   constructor(private articleService: ArticleService) {
   }
@@ -25,15 +26,15 @@ export class NewsPageComponent implements OnInit {
   }
 
   getArticle() {
-    this.articleService.getArticleByUrl(this.visitUkraine).subscribe({next: articles => this.articlesVisitUkraine = articles})
-    this.articleService.getArticleByUrl(this.warUkraine).subscribe({next: articles => this.articlesWarUkrain = articles})
-    this.articleService.getArticleByUrl(this.ukrinform).subscribe({next: articles => this.articlesUkrinform = articles})
+    this.articleService.getArticleByUrl(1).subscribe({next: articles => this.articlesVisitUkraine = articles})
+    this.articleService.getArticleByUrl(2).subscribe({next: articles => this.articlesWarUkrain = articles})
+    this.articleService.getArticleByUrl(3).subscribe({next: articles => this.articlesUkrinform = articles})
   }
 
   addArticle() {
-    this.articleService.createArticleByUrl(this.visitUkraine)
-    this.articleService.createArticleByUrl(this.warUkraine)
-    this.articleService.createArticleByUrl(this.ukrinform)
+    this.articleService.createArticleByUrl(1).subscribe()
+    this.articleService.createArticleByUrl(2).subscribe()
+    this.articleService.createArticleByUrl(3).subscribe()
   }
 
   clearArticle() {

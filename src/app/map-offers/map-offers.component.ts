@@ -13,14 +13,14 @@ import {GoogleMap} from "@angular/google-maps";
 export class MapOffersComponent implements OnInit {
   @ViewChild(GoogleMap, {static: false}) map!: GoogleMap
 
-  zoom = 12
+  zoom = 8
   geocode!: google.maps.Geocoder
   center!: google.maps.LatLngLiteral
   position?: google.maps.LatLng
 
   options: google.maps.MapOptions = {
     zoomControl: true,
-    scrollwheel: false,
+    scrollwheel: true,
     disableDoubleClickZoom: true,
     maxZoom: 50,
     minZoom: 0,
@@ -34,12 +34,43 @@ export class MapOffersComponent implements OnInit {
   }
 
   ngOnInit() {
+    //Ukrainian Embassy in Poland
+    this.position = new google.maps.LatLng(52.237695, 21.005427);
+    this.markers.push(new google.maps.Marker({
+        position: this.position,
+        label: "Ukrainian Embassy"
+      })
+    );
+
+    //Honorary Consulate of Ukraine
+    this.position = new google.maps.LatLng(51.239457, 22.567676);
+    this.markers.push(new google.maps.Marker({
+        position: this.position,
+        label: "Honorary Consulate of Ukraine"
+      })
+    );
+
+    this.position = new google.maps.LatLng(50.067417, 19.95901);
+    this.markers.push(new google.maps.Marker({
+        position: this.position,
+        label: "Honorary Consulate of Ukraine"
+      })
+    );
+
+    this.position = new google.maps.LatLng(54.385433, 18.579981);
+    this.markers.push(new google.maps.Marker({
+        position: this.position,
+        label: "Honorary Consulate of Ukraine"
+      })
+    );
+
     navigator.geolocation.getCurrentPosition((position) => {
       this.center = {
         lat: position.coords.latitude,
         lng: position.coords.longitude,
       }
     })
+
     this.getRole();
   }
 
@@ -63,7 +94,7 @@ export class MapOffersComponent implements OnInit {
   }
 
   insertPinpoint(type: string) {
-    this.markers.splice(0);
+    //this.markers.splice(0);
     for (let offer of this.offerList) {
       this.addMarker(offer.address, type, offer.title);
       console.warn(offer.address + " " + type + " " + offer.title);

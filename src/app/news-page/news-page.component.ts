@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { TokenStorageService } from '../auth/token-storage.service';
-import { ArticleService } from "./article.service";
+import {Component, OnInit} from '@angular/core';
+import {ArticleService} from "./article.service";
 import {Article} from "./article.model";
 
 @Component({
@@ -12,12 +11,12 @@ export class NewsPageComponent implements OnInit {
   articlesVisitUkraine!: Article[];
   articlesWarUkrain!: Article[];
   articlesUkrinform!: Article[]
+
   private visitUkraine = "https://visitukraine.today/uk/blog"; //1 Img + title + url_article
   private warUkraine = "https://war.ukraine.ua/ru/news/"; //2 Title + text
   private ukrinform = "https://www.ukrinform.ua/"; //3 sImg + title + url_article
 
-  constructor(private articleService: ArticleService,
-              private token: TokenStorageService) {
+  constructor(private articleService: ArticleService) {
   }
 
   ngOnInit(): void {
@@ -38,7 +37,7 @@ export class NewsPageComponent implements OnInit {
     this.articleService.createArticleByUrl(3).subscribe()
   }
 
-  clearArticle(){
+  clearArticle() {
     this.articleService.clearArticle()
   }
 }

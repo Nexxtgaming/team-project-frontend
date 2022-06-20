@@ -1,0 +1,7 @@
+export enum LookingForTypes {
+  TRANSPORTATION,
+  ACCOMMODATION,
+  TRANSLATION,
+  JOB,
+  LANGUAGE_COURSE,
+}

@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of, tap} from 'rxjs';
 import { VolunteersOffer } from '../offers/volunteers-offer.model';
-import { OfferRequest } from './volunteers-offer/offer-request';
+import { OfferRequest } from '../offers/request/offer-request';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -44,8 +44,7 @@ export class VolunteerService {
     };
   }
 
-  /** Log a StudentService message with the MessageService */
   private log(message: string) {
-    console.log('StudentService: ' + message);
+    console.log('VolunteerService: ' + message);
   }
 }

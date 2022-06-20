@@ -1,0 +1,26 @@
+<div class="full-container">
+  <section>
+    <div class="stack">
+      <div class="background-picture">
+        <app-header></app-header>
+      </div>
+      <div class="content">
+        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+          <label for="title" class="form-label">Please enter the title of your offer :</label>
+          <input id="title" name="title" type="text" placeholder="title" class="form-input" [(ngModel)]="form.title" #title="ngModel"/>
+          <label for="city" class="form-label">Please enter the city where you want to provide help :</label>
+          <input id="city" name="city" type="text" placeholder="City" class="form-input-2" [(ngModel)]="form.city" #city="ngModel"/>
+          <label for="address" class="form-label">Please enter the address of your offer, be the more precise has possible :</label>
+          <input id="address" name="address" type="text" placeholder="City" class="form-input-2" [(ngModel)]="form.address" #address="ngModel"/>
+          <label for="capacity" class="form-label-2">Please enter the number of person you can accommodate :</label>
+          <input id="capacity" name="capacity" type="number" min="1" class="form-input-2" [(ngModel)]="form.capacity" #capacity="ngModel"/>
+          <label for="description" class="form-label-2">Please enter a description for you offer :</label>
+          <input id="description" name="description" placeholder="Please enter a description for you offer :" class="form-text-area" [(ngModel)]="form.description" #description="ngModel"/>
+          <button class="form-submit-button">Add offer</button>
+        </form>
+        <button (click)="goBack()">Go Back</button>
+      </div>
+      <app-footer></app-footer>
+    </div>
+  </section>
+</div>

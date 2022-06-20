@@ -5,10 +5,43 @@
       <div class="background-picture">
         <app-header></app-header>
       </div>
+      <div class="row">
 
-      <div class="content">
-        <div class="row">
+        <div class="ukrinform">
+          <a href="https://www.ukrinform.ua/">
+            Ukrinform
+            <!--<img style="width:300px;" src="/img/logo_ukr.svg" alt="">-->
+          </a>
+          <li *ngFor="let article of articlesUkrinform">
+            <a href="https://www.ukrinform.ua/"><!--Supposed to be: [href]="article.articleUrl" but doesnt work idk-->
+              <h2>{{article.title}}</h2>
+              <!--<img href="{{article.imgUrl}}" class="img_article">-->
+            </a>
+          </li>
+        </div>
 
+        <div class="warinukrain">
+          <a href="https://war.ukraine.ua/ru">
+            war.urkaine.ua
+          </a>
+          <li *ngFor="let article of articlesWarUkrain">
+            <a href="https://war.ukraine.ua/ru/news/">
+              <h2>{{article.title}}</h2>
+              <p>{{article.text}}</p>
+            </a>
+          </li>
+        </div>
+
+        <div class="visitukrain">
+          <a href="https://visitukraine.today/uk/blog">Visit Ukraine Today</a>
+          <li *ngFor="let article of articlesVisitUkraine">
+            <a href="https://visitukraine.today/uk/blog"> <!--Supposed to be: [href]="article.articleUrl" but doesnt work idk-->
+              <h2>{{article.title}}</h2>
+              <!--<img href="{{article.imgUrl}}" class="img_article">-->
+            </a>
+          </li>
+        </div>
+      </div>
           <div class="ukrinform">
             <div class="column">
               <h3><a href="https://www.ukrinform.ua/">

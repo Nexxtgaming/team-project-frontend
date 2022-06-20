@@ -18,6 +18,7 @@ import {TransportationOfferComponent} from './map-offers/transportation-offer/tr
 import {NewsPageComponent} from "./news-page/news-page.component";
 
 
+
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'suggestions', component: SuggestionsComponent},

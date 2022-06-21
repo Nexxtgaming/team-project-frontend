@@ -10,7 +10,7 @@ import {Article} from "./article.model";
 export class NewsPageComponent implements OnInit {
   articlesVisitUkraine!: Article[];
   articlesWarUkrain!: Article[];
-  articlesUkrinform!: Article[]
+  articlesUkrinform!: Article[];
 
   private visitUkraine = "https://visitukraine.today/uk/blog"; //1 Img + title + url_article
   private warUkraine = "https://war.ukraine.ua/ru/news/"; //2 Title + text
@@ -20,24 +20,47 @@ export class NewsPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.clearArticle()
-    this.addArticle()
-    this.getArticle()
-  }
-
-  getArticle() {
-    this.articleService.getArticleByUrl(1).subscribe({next: articles => this.articlesVisitUkraine = articles})
-    this.articleService.getArticleByUrl(2).subscribe({next: articles => this.articlesWarUkrain = articles})
-    this.articleService.getArticleByUrl(3).subscribe({next: articles => this.articlesUkrinform = articles})
+    this.clearArticle();
+    this.addArticle();
   }
 
   addArticle() {
-    this.articleService.createArticleByUrl(1).subscribe()
-    this.articleService.createArticleByUrl(2).subscribe()
-    this.articleService.createArticleByUrl(3).subscribe()
+    this.articleService.createArticleByUrl(1).subscribe({
+      next: articles => {
+        this.articleService.getArticleByUrl(1)
+          .subscribe({
+            next: articles => {
+              this.articlesVisitUkraine = articles;
+              this.articlesVisitUkraine.splice(4);
+            }
+          })
+      }
+    });
+    this.articleService.createArticleByUrl(2).subscribe({
+      next: articles => {
+        this.articleService.getArticleByUrl(2)
+          .subscribe({
+            next: articles => {
+              this.articlesWarUkrain = articles;
+              this.articlesWarUkrain.splice(10);
+            }
+          })
+      }
+    });
+    this.articleService.createArticleByUrl(3).subscribe({
+      next: articles => {
+        this.articleService.getArticleByUrl(3)
+          .subscribe({
+            next: articles => {
+              this.articlesUkrinform = articles;
+              this.articlesUkrinform.splice(4);
+            }
+          })
+      }
+    });
   }
 
   clearArticle() {
-    this.articleService.clearArticle()
+    this.articleService.deleteAllArticle();
   }
 }

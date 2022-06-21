@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {BehaviorSubject, catchError, Observable, of, tap} from "rxjs";
+import {catchError, Observable, of} from "rxjs";
 import {Article} from "./article.model";
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  headers: new HttpHeaders({'Content-Type': 'application/json'}),
 };
+
 @Injectable({
   providedIn: 'root',
 })
@@ -13,19 +14,21 @@ const httpOptions = {
 export class ArticleService {
   private articleUrl = "http://localhost:8083/api/article"; //Not sure about that. 8083 ???
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
-  getArticleByUrl(url:number): Observable<Article[]> {
+  getArticleByUrl(url: number): Observable<Article[]> {
     const urlFinal = `${this.articleUrl}/getbyurl/${url}`;
     return this.http.get<Article[]>(urlFinal, httpOptions).pipe()
   }
 
-  createArticleByUrl(url:number):Observable<Article[]>{
+  createArticleByUrl(url: number): Observable<Article[]> {
     const urlFinal = `${this.articleUrl}/createbyurl/${url}`
     return this.http.post<Article[]>(urlFinal, httpOptions).pipe(
       catchError(this.handleError<Article[]>('article created'))
     )
   }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.
@@ -45,12 +48,22 @@ export class ArticleService {
     };
   }
 
-  /** Log a StudentService message with the MessageService */
+  /** Log a ArticleService message with the MessageService */
   private log(message: string) {
-    console.log('StudentService: ' + message);
+    console.log('ArticleService: ' + message);
   }
 
-  clearArticle(): void{
-    this.http.delete(this.articleUrl+"/deleteall", httpOptions).pipe()
+  //Delete all article with http request
+  deleteAllArticle(): void {
+    this.http.delete(this.articleUrl + "/deleteall").subscribe()
   }
+
+
+  // clearArticle(): Observable<Article[]> {
+  //   console.error("COUCOU")
+  //   return this.http.delete<Article[]>("http://localhost:8083/api/article", httpOptions).pipe(
+  //     tap(_ => this.log(`deleted article`)),
+  //     catchError(this.handleError<Article[]>('deleteAllArticle'))
+  //   );
+  // }
 }

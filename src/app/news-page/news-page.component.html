@@ -7,37 +7,51 @@
       </div>
       <div class="row">
 
-        <div class="ukrinform">
-          <a href="https://www.ukrinform.ua/">
-            Ukrinform
-            <!--<img style="width:300px;" src="/img/logo_ukr.svg" alt="">-->
-          </a>
+        <div class="column">
+          <h2><a href="https://www.ukrinform.ua/">UkrInform</a></h2>
           <li *ngFor="let article of articlesUkrinform">
-            <a href="https://www.ukrinform.ua/"><!--Supposed to be: [href]="article.articleUrl" but doesnt work idk-->
-              <h2>{{article.title}}</h2>
-              <!--<img href="{{article.imgUrl}}" class="img_article">-->
-            </a>
+            <div class="card shadow-sm">
+              <img src="{{article.img_url}}" class="bd-placeholder-img card-img-top">
+              <div class="card-body">
+                <h3 class="mb-0"><a href="{{article.article_url}}">{{article.title}}</a></h3>
+              </div>
+            </div>
           </li>
+
         </div>
 
+        <!--        <div class="ukrinform">-->
+        <!--          <h2><a href="https://www.ukrinform.ua/">-->
+        <!--          </a></h2>-->
+        <!--          <li *ngFor="let article of articlesUkrinform">-->
+        <!--            <div class="article">-->
+        <!--              <a href={{article.article_url}}>-->
+        <!--                {{article.title}}-->
+        <!--                <img src="{{article.img_url}}" class="img_article">-->
+        <!--              </a>-->
+        <!--            </div>-->
+        <!--          </li>-->
+        <!--        </div>-->
+
         <div class="warinukrain">
-          <a href="https://war.ukraine.ua/ru">
+          <h2><a href="https://war.ukraine.ua/ru">
             war.urkaine.ua
-          </a>
-          <li *ngFor="let article of articlesWarUkrain">
-            <a href="https://war.ukraine.ua/ru/news/">
-              <h2>{{article.title}}</h2>
+          </a></h2>
+          <div class="article">
+            <li *ngFor="let article of articlesWarUkrain">
+              <a href="{{article.article_url}}">
+                {{article.title}}</a>
               <p>{{article.text}}</p>
-            </a>
-          </li>
+            </li>
+          </div>
         </div>
 
         <div class="visitukrain">
-          <a href="https://visitukraine.today/uk/blog">Visit Ukraine Today</a>
+          <h2><a href="https://visitukraine.today/uk/blog">Visit Ukraine Today</a></h2>
           <li *ngFor="let article of articlesVisitUkraine">
-            <a href="https://visitukraine.today/uk/blog"> <!--Supposed to be: [href]="article.articleUrl" but doesnt work idk-->
+            <a href="{{article.article_url}}">
               <h2>{{article.title}}</h2>
-              <!--<img href="{{article.imgUrl}}" class="img_article">-->
+              <img src="{{article.img_url}}">
             </a>
           </li>
         </div>

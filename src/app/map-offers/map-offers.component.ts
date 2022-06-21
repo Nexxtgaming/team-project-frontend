@@ -133,7 +133,7 @@ export class MapOffersComponent implements OnInit {
     this.mapOfferService.getAccommodationOfferList().subscribe({
       next: (list) => {
         this.offerList = list;
-        this.insertPinpoint("Accommodation");
+        //this.insertPinpoint("Accommodation");
       }
     })
   }
@@ -143,7 +143,7 @@ export class MapOffersComponent implements OnInit {
     this.mapOfferService.getLanguageCourseOfferList().subscribe({
       next: (list) => {
         this.offerList = list;
-        this.insertPinpoint("LanguageCourse");
+        //this.insertPinpoint("LanguageCourse");
       }
     })
   }
@@ -152,7 +152,7 @@ export class MapOffersComponent implements OnInit {
     this.mapOfferService.getLegalAdviceOfferList().subscribe({
       next: (list) => {
         this.offerList = list;
-        this.insertPinpoint("LegalAdvice");
+        //this.insertPinpoint("LegalAdvice");
       }
     })
   }
@@ -161,7 +161,7 @@ export class MapOffersComponent implements OnInit {
     this.mapOfferService.getTranslationOfferList().subscribe({
       next: (list) => {
         this.offerList = list;
-        this.insertPinpoint("Translation");
+        //this.insertPinpoint("Translation");
       }
     })
   }
@@ -170,7 +170,7 @@ export class MapOffersComponent implements OnInit {
     this.mapOfferService.getTransportationOfferList().subscribe({
       next: (list) => {
         this.offerList = list;
-        this.insertPinpoint("Transportation");
+        //this.insertPinpoint("Transportation");
       }
     })
   }

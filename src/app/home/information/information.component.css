@@ -2,27 +2,30 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .content {
   display: flex;
+  height: 100%;
 }
 
-.row {
+.rowpers {
   display: flex;
   flex-direction: row;
   margin: auto;
+  height: 100%;
 }
 
 .column {
   display: flex;
   flex-direction: column;
   line-height: normal;
-  width: 14vw;
+  width: 25vw;
   margin-right: 10vw;
 }
 
 .overflow-scroll {
-  max-height: 55vh;
+  max-height: 100%;
   overflow: scroll;
 }

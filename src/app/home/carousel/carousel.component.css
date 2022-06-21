@@ -5,7 +5,7 @@ section {
 }
 
 .content {
-  height: 350px;
+  height: 380px;
   width: 40vw;
   margin: 0 9vw;
   color: white;
@@ -19,5 +19,6 @@ section {
 }
 
 .content p {
-  text-align: justify;
+  text-align: center;
+  font-size: 17px;
 }

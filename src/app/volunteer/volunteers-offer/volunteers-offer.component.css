@@ -9,3 +9,7 @@
 .user, .title, .city {
   padding: 6px;
 }
+
+.offer img {
+  margin-left: 5px;
+}

@@ -42,7 +42,7 @@ export class NewsPageComponent implements OnInit {
           .subscribe({
             next: articles => {
               this.articlesWarUkrain = articles;
-              this.articlesWarUkrain.splice(10);
+              this.articlesWarUkrain.splice(11);
             }
           })
       }

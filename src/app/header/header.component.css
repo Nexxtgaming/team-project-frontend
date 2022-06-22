@@ -42,6 +42,7 @@ a:link, a:visited, a:hover, a:active {
   list-style: none;
   margin: 0 3vw 0 3vw;
 }
+
 .li button {
   border: none;
   outline: none;
@@ -76,4 +77,11 @@ a:link, a:visited, a:hover, a:active {
 
 .sub a {
   padding: 10px;
+}
+
+button {
+  background-color: #f0f8ff00;
+  color: white;
+  font-weight: bold;
+  border: none;
 }

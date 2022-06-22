@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {AccommodationOfferRequest} from "../../offers/request/accomodation-offer-request";
+import {Component, OnInit} from '@angular/core';
 import {MapOfferService} from "../map-offer.service";
 import {Location} from "@angular/common";
 import {TransportationOfferRequest} from "../../offers/request/transportation-offer-request";
@@ -14,13 +13,13 @@ export class TransportationOfferComponent implements OnInit {
   accommodation_offer!: TransportationOfferRequest;
 
   constructor(private mapOfferService: MapOfferService,
-              private location : Location) { }
+              private location: Location) {
+  }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-
     this.accommodation_offer = new TransportationOfferRequest(
       this.form.title,
       this.form.description,
@@ -30,8 +29,8 @@ export class TransportationOfferComponent implements OnInit {
       this.form.capacity,
       this.form.date_of_departure,
       this.form.date_of_arrival,
-      this.form.vehicle
-    );
+      this.form.vehicle);
+
 
     this.mapOfferService.addTransportationOffer(this.accommodation_offer).subscribe();
   }

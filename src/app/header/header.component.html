@@ -11,9 +11,10 @@
     </li>
     <li><a routerLink="/news"><p>News</p></a></li>
     <li><a routerLink="/suggestions"><p>Suggestions</p></a></li>
+    <li *ngIf="token == '{}'"><a routerLink="/signin"><p>Sign In</p></a></li>
     <li *ngIf="token == '{}'"><a routerLink="/signup"><p>Register</p></a></li>
     <li *ngIf="token != '{}'">
-      <button (click)="logout()">Logout</button>
+      <button (click)="logout()"><p>Logout</p></button>
     </li>
   </ul>
 </div>

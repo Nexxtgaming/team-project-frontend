@@ -43,6 +43,7 @@ export class NewsPageComponent implements OnInit {
             next: articles => {
               this.articlesWarUkrain = articles;
               this.articlesWarUkrain.splice(11);
+              this.articlesWarUkrain = this.articlesWarUkrain.reverse();
             }
           })
       }

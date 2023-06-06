@@ -1,5 +1,5 @@
 # TeamProjectFrontend
-
+Frontend part of project created for a course 'Team Project' that helps ukrainian refugees to find a job, school and other aid. 
 
 ## Development server
 
